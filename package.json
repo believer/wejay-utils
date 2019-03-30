@@ -1,7 +1,5 @@
 {
-  "scripts": {
-    "prepare": "lerna exec -- tsc"
-  },
+  "scripts": {},
   "devDependencies": {
     "lerna": "^2.11.0"
   }
