@@ -1,12 +1,7 @@
 import { IncomingMessage, ServerResponse } from 'http'
-import SpotifyWebApi from 'spotify-web-api-node'
 import url from 'url'
 import { ParsedUrlQuery } from 'querystring'
-
-const spotifyApi = new SpotifyWebApi({
-  clientId: process.env.SPOTIFY_CLIENT_ID,
-  clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-})
+import spotifyClient from '@wejay/spotify-client'
 
 const validateQuery = (query: ParsedUrlQuery) => {
   if (!query.q) {
@@ -18,14 +13,10 @@ const validateQuery = (query: ParsedUrlQuery) => {
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   try {
+    const { searchTracks } = await spotifyClient()
     const { q } = validateQuery(url.parse(req.url || '', true).query)
-    const { body: token } = await spotifyApi.clientCredentialsGrant()
 
-    spotifyApi.setAccessToken(token.access_token)
-
-    const { body } = await spotifyApi.searchTracks(
-      typeof q === 'string' ? q : q[0]
-    )
+    const { body } = await searchTracks(typeof q === 'string' ? q : q[0])
 
     const tracks = body.tracks.items.map(track => ({
       albumName: track.album.name,
