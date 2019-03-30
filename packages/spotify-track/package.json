@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "author": "believer <rickard.laurin@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@wejay/spotify-client": "^0.1.6"
+    "@wejay/spotify-client": "^0.1.7"
   },
   "devDependencies": {
     "@iteam/eslint-config-iteam-node": "^0.1.0",
