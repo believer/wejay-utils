@@ -37,7 +37,7 @@ declare module 'spotify-web-api-node' {
     access_token: string
   }
 
-  type PromiseWithBody<T = {}> = { body: T }
+  type PromiseWithBody<T = {}> = Promise<{ body: T }>
 
   class SpotifyWebApi {
     constructor(config: Config)

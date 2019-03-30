@@ -36,7 +36,7 @@ interface Token {
   access_token: string
 }
 
-type PromiseWithBody<T = {}> = { body: T }
+type PromiseWithBody<T = {}> = Promise<{ body: T }>
 
 declare class SpotifyWebApi {
   constructor(config: Config)
