@@ -8,7 +8,9 @@
   "main": "index.js",
   "scripts": {
     "prepare": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test:ci": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "believer <rickard.laurin@gmail.com>",
@@ -17,7 +19,17 @@
     "got": "9.6.0"
   },
   "devDependencies": {
+    "@iteam/eslint-config-iteam-node": "^0.1.0",
     "@types/got": "9.4.1",
+    "@types/jest": "^24.0.11",
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "is-ci-cli": "^1.1.1",
+    "jest": "^24.5.0",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.1",
     "typescript": "3.4.1"
   }
 }

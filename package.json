@@ -1,5 +1,8 @@
 {
-  "scripts": {},
+  "scripts": {
+    "test": "lerna exec -- npm run test:ci -- --passWithNoTests",
+    "lint": "lerna exec -- eslint --ignore-path \"../../.eslintignore\" \"./**/*.ts\""
+  },
   "devDependencies": {
     "lerna": "^2.11.0"
   }

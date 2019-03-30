@@ -11,5 +11,6 @@
     "strict": true,
     "outDir": "dist",
     "target": "es5"
-  }
+  },
+  "exclude": ["**/__tests__/**/*", "**/__mocks__/**/*"]
 }
