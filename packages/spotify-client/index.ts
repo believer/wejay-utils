@@ -6,9 +6,9 @@ export default async () => {
     clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
   })
 
-  const { body: token } = await spotifyApi.clientCredentialsGrant()
+  const { body } = await spotifyApi.clientCredentialsGrant()
 
-  spotifyApi.setAccessToken(token.access_token)
+  spotifyApi.setAccessToken(body.access_token)
 
   return spotifyApi
 }
