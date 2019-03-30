@@ -1,7 +1,7 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import url from 'url'
 import { ParsedUrlQuery } from 'querystring'
-import spotifyClient from '@wejay/spotify-client'
+import { spotifyClient } from '@wejay/spotify-client'
 
 const validateQuery = (query: ParsedUrlQuery) => {
   if (!query.uri) {
@@ -13,10 +13,10 @@ const validateQuery = (query: ParsedUrlQuery) => {
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   try {
-    const { getTrack } = await spotifyClient()
+    const client = await spotifyClient()
     const { uri } = validateQuery(url.parse(req.url || '', true).query)
 
-    const { body: track } = await getTrack(
+    const { body: track } = await client.getTrack(
       typeof uri === 'string' ? uri : uri[0]
     )
 

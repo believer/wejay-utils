@@ -44,7 +44,7 @@ declare module 'spotify-web-api-node' {
 
     clientCredentialsGrant: () => PromiseWithBody<Token>
     searchTracks: (query: string) => PromiseWithBody<SpotifyResult>
-    setAccessToken: (accessToken: string) => PromiseWithBody<SpotifyResult>
+    setAccessToken: (accessToken: string) => void
     getTrack: (id: string) => PromiseWithBody<Track>
   }
 

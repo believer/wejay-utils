@@ -43,10 +43,8 @@ declare class SpotifyWebApi {
 
   clientCredentialsGrant: () => PromiseWithBody<Token>
   searchTracks: (query: string) => PromiseWithBody<SpotifyResult>
-  setAccessToken: (accessToken: string) => PromiseWithBody<SpotifyResult>
+  setAccessToken: (accessToken: string) => void
   getTrack: (id: string) => PromiseWithBody<Track>
 }
 
-declare function client(): Promise<SpotifyWebApi>
-
-export default client
+export declare function spotifyClient(): Promise<SpotifyWebApi>

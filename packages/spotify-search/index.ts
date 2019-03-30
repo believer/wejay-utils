@@ -1,7 +1,7 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import url from 'url'
 import { ParsedUrlQuery } from 'querystring'
-import spotifyClient from '@wejay/spotify-client'
+import { spotifyClient } from '@wejay/spotify-client'
 
 const validateQuery = (query: ParsedUrlQuery) => {
   if (!query.q) {
@@ -13,10 +13,10 @@ const validateQuery = (query: ParsedUrlQuery) => {
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   try {
-    const { searchTracks } = await spotifyClient()
+    const client = await spotifyClient()
     const { q } = validateQuery(url.parse(req.url || '', true).query)
 
-    const { body } = await searchTracks(typeof q === 'string' ? q : q[0])
+    const { body } = await client.searchTracks(typeof q === 'string' ? q : q[0])
 
     const tracks = body.tracks.items.map(track => ({
       albumName: track.album.name,
