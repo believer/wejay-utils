@@ -1,0 +1,28 @@
+{
+  "name": "wejay-utils",
+  "version": 2,
+  "builds": [
+    {
+      "src": "packages/spotify-search/index.ts",
+      "use": "@now/node"
+    },
+    {
+      "src": "packages/spotify-track/index.ts",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/search",
+      "dest": "packages/spotify-search/index.ts"
+    },
+    {
+      "src": "/track",
+      "dest": "packages/spotify-track/index.ts"
+    }
+  ],
+  "env": {
+    "SPOTIFY_CLIENT_ID": "@spotify-client-id",
+    "SPOTIFY_CLIENT_SECRET": "@spotify-client-secret"
+  }
+}
