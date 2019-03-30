@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "11.12.2",
-    "@wejay/spotify-client": "^0.1.4",
+    "@wejay/spotify-client": "^0.1.5",
     "prettier": "1.16.4",
     "typescript": "3.4.1"
   }
