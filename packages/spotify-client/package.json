@@ -14,9 +14,9 @@
   "author": "believer <rickard.laurin@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^11.12.2",
-    "prettier": "^1.16.4",
-    "spotify-web-api-node": "^4.0.0",
-    "typescript": "^3.4.1"
+    "@types/node": "11.12.2",
+    "prettier": "1.16.4",
+    "spotify-web-api-node": "4.0.0",
+    "typescript": "3.4.1"
   }
 }
