@@ -1,5 +1,4 @@
 module.exports = {
+  ...require('../../jest.config'),
   displayName: '@wejay/spotify',
-  preset: 'ts-jest',
-  testEnvironment: 'node',
 }

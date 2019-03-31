@@ -1,4 +1,4 @@
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  ...require('../../jest.config'),
+  displayName: '@wejay/spotify-search',
 }

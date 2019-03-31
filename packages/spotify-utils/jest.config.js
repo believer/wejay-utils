@@ -1,4 +1,4 @@
 module.exports = {
   ...require('../../jest.config'),
-  displayName: '@wejay/spotify-track',
+  displayName: '@wejay/spotify-utils',
 }
