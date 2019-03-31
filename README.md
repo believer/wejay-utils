@@ -1,5 +1,7 @@
 # wejay-utils
 
+[![Build Status](https://travis-ci.com/Iteam1337/wejay-utils.svg?branch=master)](https://travis-ci.com/Iteam1337/wejay-utils)
+
 Monorepo using [Lerna](https://lernajs.io/) for Wejay support functionality. Makes calls to Spotify's Web API.
 
 ## Get started
