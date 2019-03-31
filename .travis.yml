@@ -13,10 +13,14 @@ install:
 
 matrix:
   include:
-    - name: wejay/spotify-utils
-      env: PACKAGE_LOCATION=packages/spotify-utils
     - name: wejay/spotify
       env: PACKAGE_LOCATION=packages/spotify
+    - name: wejay/spotify-search
+      env: PACKAGE_LOCATION=packages/spotify-search
+    - name: wejay/spotify-track
+      env: PACKAGE_LOCATION=packages/spotify-track
+    - name: wejay/spotify-utils
+      env: PACKAGE_LOCATION=packages/spotify-utils
 
 script:
   - cd $PACKAGE_LOCATION
