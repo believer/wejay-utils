@@ -13,9 +13,9 @@ install:
 
 matrix:
   include:
-    - name: wejay/spotify-utils pipeline
+    - name: wejay/spotify-utils
       env: PACKAGE_LOCATION=packages/spotify-utils
-    - name: wejay/spotify pipeline
+    - name: wejay/spotify
       env: PACKAGE_LOCATION=packages/spotify
 
 script:
