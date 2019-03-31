@@ -1,8 +1,11 @@
 language: node_js
-node_js:
-  - "10.9.0"
 
-cache: npm
+cache:
+  directories:
+    - '~/.npm'
+    
+node_js:
+- 10
 
 install:
   - npm i -g lerna
