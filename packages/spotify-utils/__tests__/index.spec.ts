@@ -1,4 +1,4 @@
-import { createTrack, queryParam } from '../'
+import { createTrack, queryParam } from '../index'
 
 describe('#createTrack', () => {
   test('should parse a spotify track into an easier structure', () => {

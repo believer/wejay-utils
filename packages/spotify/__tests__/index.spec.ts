@@ -1,5 +1,5 @@
 import got from 'got'
-import { getTrack, search } from '../'
+import { getTrack, search } from '../index'
 
 jest.mock('got')
 
