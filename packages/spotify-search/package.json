@@ -16,7 +16,8 @@
   "author": "believer <rickard.laurin@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@wejay/spotify-client": "^0.1.7"
+    "@wejay/spotify-client": "^0.1.7",
+    "@wejay/spotify-utils": "^0.0.0"
   },
   "devDependencies": {
     "@iteam/eslint-config-iteam-node": "^0.1.0",

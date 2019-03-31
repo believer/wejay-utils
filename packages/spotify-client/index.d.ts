@@ -1,18 +1,18 @@
-interface Artist {
+export interface Artist {
   name: string
 }
 
-interface AlbumCover {
+export interface AlbumCover {
   url: string
 }
 
-interface Album {
+export interface Album {
   images: AlbumCover[]
   name: string
   release_date: string
 }
 
-interface Track {
+export interface Track {
   album: Album
   artists: Artist[]
   duration_ms: number

@@ -1,33 +1,14 @@
 import { IncomingMessage, ServerResponse } from 'http'
-import url from 'url'
-import { ParsedUrlQuery } from 'querystring'
 import { spotifyClient } from '@wejay/spotify-client'
-
-const validateQuery = (query: ParsedUrlQuery) => {
-  if (!query.q) {
-    throw new Error('No search query (q) provided')
-  }
-
-  return query
-}
+import { createTrack, queryParam } from '@wejay/spotify-utils'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   try {
+    const q = queryParam({ path: req.url, param: 'q' })
+
     const client = await spotifyClient()
-    const { q } = validateQuery(url.parse(req.url || '', true).query)
-
-    const { body } = await client.searchTracks(typeof q === 'string' ? q : q[0])
-
-    const tracks = body.tracks.items.map(track => ({
-      albumName: track.album.name,
-      artist: track.artists.map(artist => artist.name).join(', '),
-      cover: track.album.images[1] ? track.album.images[1].url : '',
-      duration: track.duration_ms,
-      id: track.id,
-      name: track.name,
-      releaseDate: track.album.release_date,
-      uri: track.uri,
-    }))
+    const { body } = await client.searchTracks(q)
+    const tracks = body.tracks.items.map(createTrack)
 
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ tracks }))
