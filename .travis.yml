@@ -3,9 +3,9 @@ language: node_js
 cache:
   directories:
     - '~/.npm'
-    
+
 node_js:
-- 10
+  - 10
 
 install:
   - npm i -g lerna
@@ -13,10 +13,10 @@ install:
 
 matrix:
   include:
-  - name: @wejay/spotify-utils pipeline
-    env: PACKAGE_LOCATION=packages/spotify-utils
-  - name: @wejay/spotify pipeline
-    env: PACKAGE_LOCATION=packages/spotify
+    - name: wejay/spotify-utils pipeline
+      env: PACKAGE_LOCATION=packages/spotify-utils
+    - name: wejay/spotify pipeline
+      env: PACKAGE_LOCATION=packages/spotify
 
 script:
   - cd $PACKAGE_LOCATION
