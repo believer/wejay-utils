@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "10.9.0"
+
+cache: npm
+
+install:
+  - npm i -g lerna
+  - lerna bootstrap
+
+matrix:
+  include:
+  - name: @wejay/spotify-utils pipeline
+    env: PACKAGE_LOCATION=packages/spotify-utils
+  - name: @wejay/spotify pipeline
+    env: PACKAGE_LOCATION=packages/spotify
+
+script:
+  - cd $PACKAGE_LOCATION
+  - npm test
