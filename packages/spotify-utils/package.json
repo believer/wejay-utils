@@ -8,7 +8,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "tsc",
+    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test:ci": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "believer <rickard.laurin@gmail.com>",
@@ -17,7 +20,12 @@
     "@wejay/spotify-client": "^0.1.8"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "@types/node": "^11.12.2",
+    "is-ci-cli": "^1.1.1",
+    "jest": "^24.5.0",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.1",
     "typescript": "^3.4.1"
   }
 }
