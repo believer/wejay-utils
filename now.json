@@ -1,6 +1,7 @@
 {
   "name": "wejay-utils",
   "version": 2,
+  "alias": ["wejay.willcodefor.beer"],
   "builds": [
     {
       "src": "packages/spotify-search/index.ts",
@@ -24,5 +25,6 @@
   "env": {
     "SPOTIFY_CLIENT_ID": "@spotify-client-id",
     "SPOTIFY_CLIENT_SECRET": "@spotify-client-secret"
-  }
+  },
+  "regions": ["bru1"]
 }
