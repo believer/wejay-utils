@@ -5,7 +5,8 @@
   },
   "version": "0.1.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "tsc",
     "test": "is-ci \"test:ci\" \"test:watch\"",
