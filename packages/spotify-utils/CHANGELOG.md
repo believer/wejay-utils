@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-utils@0.1.6...@wejay/spotify-utils@0.1.7) (2019-05-15)
+
+
+### Bug Fixes
+
+* plus as separator ([72d438a](https://github.com/Iteam1337/wejay-utils/commit/72d438a))
+
+
+
+
+
 ## [0.1.6](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-utils@0.1.5...@wejay/spotify-utils@0.1.6) (2019-05-15)
 
 **Note:** Version bump only for package @wejay/spotify-utils

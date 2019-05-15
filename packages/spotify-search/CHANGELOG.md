@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.15](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-search@0.1.14...@wejay/spotify-search@0.1.15) (2019-05-15)
+
+
+### Bug Fixes
+
+* plus as separator ([72d438a](https://github.com/Iteam1337/wejay-utils/commit/72d438a))
+
+
+
+
+
 ## [0.1.14](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-search@0.1.13...@wejay/spotify-search@0.1.14) (2019-05-15)
 
 **Note:** Version bump only for package @wejay/spotify-search
