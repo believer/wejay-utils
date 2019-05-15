@@ -30,5 +30,5 @@ export const queryParam = ({ path, param }: QueryParamProps): string => {
   const qs = validateQuery(url.parse(path || '', true).query, param)
   const outParam = qs[param]
 
-  return (Array.isArray(outParam) ? outParam[0] : outParam).replace(/\s/g, '+')
+  return Array.isArray(outParam) ? outParam[0] : outParam
 }
