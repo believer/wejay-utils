@@ -4,6 +4,6 @@
     "lint": "lerna exec -- eslint --ignore-path \"../../.eslintignore\" \"./**/*.ts\""
   },
   "devDependencies": {
-    "lerna": "^2.11.0"
+    "lerna": "3.16.4"
   }
 }
