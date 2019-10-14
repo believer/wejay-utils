@@ -25,3 +25,16 @@ matrix:
 script:
   - cd $PACKAGE_LOCATION
   - npm test
+
+after_success:
+  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+  - git remote add pub https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git -f
+  - git checkout master
+  
+deploy:
+  - provider: script
+    script: npx lerna publish --git-remote pub --yes
+    skip_cleanup: true
+    keep_history: true
+    on:
+      branch: master
