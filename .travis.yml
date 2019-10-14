@@ -8,7 +8,7 @@ jobs:
         - PACKAGE_LOCATION=packages/spotify
       script:
         - cd $PACKAGE_LOCATION
-        - npm ci
+        - npm install
         - npm test   
     - stage: wejay/spotify-search
       language: node_js
@@ -18,7 +18,7 @@ jobs:
         - PACKAGE_LOCATION=packages/spotify-search
       script:
         - cd $PACKAGE_LOCATION
-        - npm ci
+        - npm install
         - npm test
     - stage: wejay/spotify-track
       language: node_js
@@ -28,7 +28,7 @@ jobs:
         - PACKAGE_LOCATION=packages/spotify-track
       script:
         - cd $PACKAGE_LOCATION
-        - npm ci
+        - npm install
         - npm test
     - stage: wejay/spotify-utils
       language: node_js
@@ -38,7 +38,7 @@ jobs:
         - PACKAGE_LOCATION=packages/spotify-utils
       script:
         - cd $PACKAGE_LOCATION
-        - npm ci
+        - npm install
         - npm test
   
     - stage: deploy
