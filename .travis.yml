@@ -1,64 +1,27 @@
-jobs:
+language: node_js
+
+cache:
+  directories:
+    - '~/.npm'
+
+node_js:
+  - 10
+
+install:
+  - npm i -g lerna
+  - lerna bootstrap
+
+matrix:
   include:
-    - stage: wejay/spotify
-      language: node_js
-      node_js:
-        - 10
-      env:
-        - PACKAGE_LOCATION=packages/spotify
-      script:
-        - cd $PACKAGE_LOCATION
-        - npm install
-        - npm test   
-    - stage: wejay/spotify-search
-      language: node_js
-      node_js:
-        - 10
-      env:
-        - PACKAGE_LOCATION=packages/spotify-search
-      script:
-        - cd $PACKAGE_LOCATION
-        - npm install
-        - npm test
-    - stage: wejay/spotify-track
-      language: node_js
-      node_js:
-        - 10
-      env:
-        - PACKAGE_LOCATION=packages/spotify-track
-      script:
-        - cd $PACKAGE_LOCATION
-        - npm install
-        - npm test
-    - stage: wejay/spotify-utils
-      language: node_js
-      node_js:
-        - 10
-      env:
-        - PACKAGE_LOCATION=packages/spotify-utils
-      script:
-        - cd $PACKAGE_LOCATION
-        - npm install
-        - npm test
-  
-    - stage: deploy
-      language: node_js
-      node_js:
-        - 10
-      if: branch = master
-      install:
-        - npm i -g lerna
-        - lerna bootstrap
-      script:
-        - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-        - git remote add pub https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git -f
-        - git checkout master
-        - npx lerna publish --git-remote pub --yes
-      
-stages:
-  - name: wejay/spotify
-  - name: wejay/spotify-search
-  - name: wejay/spotify-track
-  - name: wejay/spotify-utils
-  - name: deploy
-    if: branch = master AND type != pull_request
+    - name: wejay/spotify
+      env: PACKAGE_LOCATION=packages/spotify
+    - name: wejay/spotify-search
+      env: PACKAGE_LOCATION=packages/spotify-search
+    - name: wejay/spotify-track
+      env: PACKAGE_LOCATION=packages/spotify-track
+    - name: wejay/spotify-utils
+      env: PACKAGE_LOCATION=packages/spotify-utils
+
+script:
+  - cd $PACKAGE_LOCATION
+  - npm test
