@@ -1,30 +1,27 @@
-
+language: node_js
+cache: npm
+node_js:
+  - 10
+install:
+  - npm i -g lerna
+  - lerna bootstrap
+matrix:
+  include:
+    - name: wejay/spotify
+      env: PACKAGE_LOCATION=packages/spotify
+    - name: wejay/spotify-search
+      env: PACKAGE_LOCATION=packages/spotify-search
+    - name: wejay/spotify-track
+      env: PACKAGE_LOCATION=packages/spotify-track
+    - name: wejay/spotify-utils
+      env: PACKAGE_LOCATION=packages/spotify-utils
+script:
+  - cd $PACKAGE_LOCATION
+  - npm test
 
 jobs:
   include:
-    - stage: test
-      language: node_js
-      cache: npm
-      node_js:
-        - 10
-      install:
-        - npm i -g lerna
-        - lerna bootstrap
-      matrix:
-        include:
-          - name: wejay/spotify
-            env: PACKAGE_LOCATION=packages/spotify
-          - name: wejay/spotify-search
-            env: PACKAGE_LOCATION=packages/spotify-search
-          - name: wejay/spotify-track
-            env: PACKAGE_LOCATION=packages/spotify-track
-          - name: wejay/spotify-utils
-            env: PACKAGE_LOCATION=packages/spotify-utils
-      script:
-        - cd $PACKAGE_LOCATION
-        - npm test
-        
-    - stage: deploy
+       - stage: deploy
       language: node_js
       node_js:
         - 10
@@ -41,7 +38,7 @@ jobs:
           keep_history: true
           on:
       branch: master
+      
 stages:
-  - test
   - name: deploy
     if: branch = master AND type != pull_request
