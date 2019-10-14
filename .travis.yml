@@ -46,6 +46,9 @@ jobs:
       node_js:
         - 10
       if: branch = master
+      install:
+        - npm i -g lerna
+        - lerna bootstrap
       script:
         - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
         - git remote add pub https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git -f
