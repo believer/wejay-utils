@@ -25,6 +25,9 @@ jobs:
         - npm test
         
     - stage: deploy
+      language: node_js
+      node_js:
+        - 10
       if: branch = master
       after_success:
         - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
