@@ -12,7 +12,9 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(
       JSON.stringify({
-        owner: body.owner.display_name,
+        playlist: {
+          owner: body.owner.display_name,
+        },
       })
     )
   } catch (error) {
