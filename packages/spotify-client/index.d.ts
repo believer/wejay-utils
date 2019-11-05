@@ -21,6 +21,14 @@ export interface Track {
   uri: string
 }
 
+export interface PlaylistOwner {
+  display_name: string
+}
+
+export interface Playlist {
+  owner: PlaylistOwner
+}
+
 interface SpotifyResult {
   tracks: {
     items: Track[]
@@ -45,6 +53,7 @@ declare class SpotifyWebApi {
   searchTracks: (query: string) => PromiseWithBody<SpotifyResult>
   setAccessToken: (accessToken: string) => void
   getTrack: (id: string) => PromiseWithBody<Track>
+  getPlaylist: (id: string) => PromiseWithBody<Playlist>
 }
 
 export declare function spotifyClient(): Promise<SpotifyWebApi>

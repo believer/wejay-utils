@@ -1,0 +1,37 @@
+{
+  "name": "@wejay/spotify-playlist",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.1.18",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "prepare": "tsc",
+    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test:ci": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "believer <rickard.laurin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@wejay/spotify-client": "^0.1.11",
+    "@wejay/spotify-utils": "^0.1.10"
+  },
+  "devDependencies": {
+    "@iteam/eslint-config-iteam-node": "^0.1.0",
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.2",
+    "@typescript-eslint/eslint-plugin": "2.0.0",
+    "@typescript-eslint/parser": "2.0.0",
+    "eslint": "6.2.2",
+    "eslint-config-prettier": "6.1.0",
+    "is-ci-cli": "^1.1.1",
+    "jest": "24.9.0",
+    "prettier": "1.18.2",
+    "ts-jest": "24.0.2",
+    "typescript": "3.5.3"
+  }
+}

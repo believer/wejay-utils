@@ -10,6 +10,10 @@
     {
       "src": "packages/spotify-track/index.ts",
       "use": "@now/node"
+    },
+    {
+      "src": "packages/spotify-playlist/index.ts",
+      "use": "@now/node"
     }
   ],
   "routes": [
@@ -20,6 +24,10 @@
     {
       "src": "/track",
       "dest": "packages/spotify-track/index.ts"
+    },
+    {
+      "src": "/playlist",
+      "dest": "packages/spotify-playlist/index.ts"
     }
   ],
   "env": {
