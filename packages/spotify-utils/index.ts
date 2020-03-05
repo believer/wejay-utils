@@ -3,6 +3,7 @@ import url from 'url'
 import { ParsedUrlQuery } from 'querystring'
 
 export const createTrack = (track: Track) => ({
+  albumId: track.album.id,
   albumName: track.album.name,
   artist: track.artists.map(artist => artist.name).join(', '),
   cover: track.album.images[1] ? track.album.images[1].url : '',

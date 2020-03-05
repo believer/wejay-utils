@@ -7,6 +7,7 @@ export interface AlbumCover {
 }
 
 export interface Album {
+  id: string
   images: AlbumCover[]
   name: string
   release_date: string
