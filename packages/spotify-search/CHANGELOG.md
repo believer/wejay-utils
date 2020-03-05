@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.20](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-search@0.1.19...@wejay/spotify-search@0.1.20) (2020-03-05)
+
+**Note:** Version bump only for package @wejay/spotify-search
+
+
+
+
+
 ## [0.1.19](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-search@0.1.18...@wejay/spotify-search@0.1.19) (2019-11-05)
 
 **Note:** Version bump only for package @wejay/spotify-search

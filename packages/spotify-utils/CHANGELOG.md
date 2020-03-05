@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-utils@0.1.11...@wejay/spotify-utils@0.2.0) (2020-03-05)
+
+
+### Features
+
+* add album id ([234c07b](https://github.com/Iteam1337/wejay-utils/commit/234c07b))
+
+
+
+
+
 ## [0.1.11](https://github.com/Iteam1337/wejay-utils/compare/@wejay/spotify-utils@0.1.10...@wejay/spotify-utils@0.1.11) (2019-11-05)
 
 **Note:** Version bump only for package @wejay/spotify-utils
