@@ -4,6 +4,7 @@ describe('#createTrack', () => {
   test('should parse a spotify track into an easier structure', () => {
     const track = {
       album: {
+        id: '1338',
         images: [
           {
             url: 'first.jpg',
@@ -23,17 +24,18 @@ describe('#createTrack', () => {
     }
 
     expect(createTrack(track)).toMatchInlineSnapshot(`
-Object {
-  "albumName": "30 Seconds to Mars",
-  "artist": "30 Seconds to Mars",
-  "cover": "second.jpg",
-  "duration": 100000,
-  "id": "1337",
-  "name": "Echelon",
-  "releaseDate": "2000-01-01",
-  "uri": "spotify:track:1337",
-}
-`)
+      Object {
+        "albumId": "1338",
+        "albumName": "30 Seconds to Mars",
+        "artist": "30 Seconds to Mars",
+        "cover": "second.jpg",
+        "duration": 100000,
+        "id": "1337",
+        "name": "Echelon",
+        "releaseDate": "2000-01-01",
+        "uri": "spotify:track:1337",
+      }
+    `)
   })
 })
 
