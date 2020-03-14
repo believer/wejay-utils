@@ -15,9 +15,11 @@ describe('#search', () => {
   test('calls the correct url', async () => {
     await search('test')
 
-    expect(got.get).toHaveBeenCalledWith(
+    expect(
+      got.get
+    ).toHaveBeenCalledWith(
       'https://wejay-utils.believer.now.sh/search?q=test',
-      { json: true }
+      { responseType: 'json' }
     )
   })
 
@@ -44,9 +46,11 @@ describe('#getTrack', () => {
   test('calls the correct url', async () => {
     await getTrack('1337')
 
-    expect(got.get).toHaveBeenCalledWith(
+    expect(
+      got.get
+    ).toHaveBeenCalledWith(
       'https://wejay-utils.believer.now.sh/search?q=test',
-      { json: true }
+      { responseType: 'json' }
     )
   })
 
